@@ -9,11 +9,13 @@ destroyBtn.addEventListener("click", destroyBoxes);
 function createBoxes() {
   let amount = input.value;
   let sizeDefault = 30;
+  let divEl = "";
+
   for (let i = 0; i < amount; i += 1) {
     let boxSizes = sizeDefault + i * 10;
-    const divEl = `<div class="box" style="width:${boxSizes}px;height:${boxSizes}px;background:${getRandomHexColor()};"></div>`;
-    boxWrapper.insertAdjacentHTML("afterbegin", divEl);
+    divEl += `<div class="box" style="width:${boxSizes}px;height:${boxSizes}px;background:${getRandomHexColor()};"></div>`;
   }
+  boxWrapper.insertAdjacentHTML("afterbegin", divEl);
 }
 
 function destroyBoxes() {
